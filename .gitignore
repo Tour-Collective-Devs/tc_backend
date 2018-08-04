@@ -1,0 +1,7 @@
+# python build products
+*.pyc
+__pycache__
+
+# database management
+*.sqlite3
+migrations
