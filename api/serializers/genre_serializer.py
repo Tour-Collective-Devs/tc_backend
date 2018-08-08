@@ -6,5 +6,9 @@ class Genre_Serializer(serializers.HyperlinkedModelSerializer):
     Genre serializer that takes the Genre model and serializes to be JSON formatted and readable.
     """
     class Meta:
-        fields = '__all__'
+        fields = (
+            'id',
+            'url',
+            'name',
+        )
         model = Genre
