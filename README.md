@@ -9,3 +9,17 @@ This repo has a few python package dependencies that must be installed to develo
 
 ## API
 The following resources are available through the api...
+
+
+## file structure / naming conventions
+
+directories all lowercase snake case
+files all lower case snake case
+class names match file names except with uppercase words
+example...
+
+file name `crew_user_account.py` for crew account model file
+class name `Crew_User_Account` for the class name in the file
+
+make sure to add classes within directories to the directories init file
+
