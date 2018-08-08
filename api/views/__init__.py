@@ -1,0 +1,1 @@
+from .genre_view import Genre_View
