@@ -10,3 +10,6 @@ class Role(models.Model):
     """this class contains the data model for crew member roles"""
     name = models.CharField(max_length=50, default="")
     description = models.CharField(max_length=300, default="")
+
+    __str__(self):
+        return f'{self.name}'
