@@ -11,5 +11,5 @@ class Role(models.Model):
     name = models.CharField(max_length=50, default="")
     description = models.CharField(max_length=300, default="")
 
-    __str__(self):
+    def __str__(self):
         return f'{self.name}'

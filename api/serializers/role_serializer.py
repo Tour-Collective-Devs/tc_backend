@@ -11,6 +11,8 @@ class Role_Serializer(serializers.ModelSerializer):
     """serializer for crew member roles"""
     class Meta:
         fields = (
+            'id',
+            'url',
             'name',
             'description'
         )
