@@ -7,7 +7,7 @@ router = DefaultRouter()
 
 urlpatterns = [
     path('employer', include('employers.urls')),
-    path('employer/auth', include('rest_auth.urls')),
+    path('employer-auth/', include('rest_auth.urls')),
     path('employer/registration/', include('rest_auth.registration.urls')),
 ]
 
