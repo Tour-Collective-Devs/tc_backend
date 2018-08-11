@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from . import models
-from . import serializers
+from employers import models
+from employers import serializers
 
 class Employer_View(generics.ListCreateAPIView):
     queryset = models.Employer.objects.all()

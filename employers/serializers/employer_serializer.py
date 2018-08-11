@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from . import models
+from employers import models
 
 class Employer_Serializer(serializers.ModelSerializer):
     class Meta:
