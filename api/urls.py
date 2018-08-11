@@ -6,8 +6,11 @@ from django.urls import include, path
 router = DefaultRouter()
 
 urlpatterns = [
-    path('employer', include('employers.urls'))
+    path('employer', include('employers.urls')),
+    path('employer/auth', include('rest_auth.urls')),
+    path('employer/registration/', include('rest_auth.registration.urls')),
 ]
+
 
 
 router.register('genre', Genre_View, base_name='genre')
