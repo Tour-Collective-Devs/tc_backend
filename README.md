@@ -10,6 +10,21 @@ This repo has a few python package dependencies that must be installed to develo
 ## API
 The following resources are available through the api...
 
+### Employer
+Employer model stores 
+1. username
+1. email
+1. password hash
+
+see auth section for more information on how to handle employers
+
+## Auth
+Our employer and (crew not finished) models uses django-rest-authentication endpoints
+
+employers can be created at endpoint api/employer/registration
+employers can login at api/employer-auth/login
+employers can be logged out by posting to api/employer-auth/logout
+
 
 ## file structure / naming conventions
 
