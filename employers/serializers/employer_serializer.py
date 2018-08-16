@@ -7,7 +7,7 @@ from employers import models
     purpose: to create the serializer for the employer model
 """
 
-class Employer_Serializer(serializers.ModelSerializer):
+class Employer_Serializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Employer
-        fields = ('email', 'username', )
+        fields = ('email', 'username', 'id', 'url', 'name')
