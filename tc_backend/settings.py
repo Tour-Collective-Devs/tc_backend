@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'api',
     'employers',
+    'crew_members',
     'rest_framework.authtoken',
     'rest_auth',
     'rest_framework',
