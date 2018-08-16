@@ -18,6 +18,35 @@ Employer model stores
 
 see auth section for more information on how to handle employers
 
+### Genre
+available fields
+id: pk
+url: url to detail view
+name: name of the genre
+
+### Role
+available fields
+id: pk
+url: url to detail view
+name: name of the role
+description: description of the role
+
+### Event
+available fields
+id: pk
+url: url to detail view
+employer: link to employer 
+genres: array of genres
+role: link to role
+start_date: start date
+end_date: end date
+description: description of the job
+total_pay: integer
+show_count: integer
+required_experience: char field
+pay_type: select field
+
+
 ## Auth
 Our employer and (crew not finished) models uses django-rest-authentication endpoints
 
@@ -38,3 +67,6 @@ class name `Crew_User_Account` for the class name in the file
 
 make sure to add classes within directories to the directories init file
 
+
+for further reading...
+https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html
