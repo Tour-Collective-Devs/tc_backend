@@ -1,3 +1,3 @@
-from .genre_serializer import Genre_Serializer
-from .role_serializer import Role_Serializer
-from .event_serializer import Event_Serializer
+from .genre_serializer import GenreSerializer
+from .role_serializer import RoleSerializer
+from .event_serializer import EventSerializer
