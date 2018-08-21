@@ -54,6 +54,23 @@ employers can be created at endpoint api/employer/registration
 employers can login at api/employer-auth/login
 employers can be logged out by posting to api/employer-auth/logout
 
+## working with auth token
+We can make sure that certain views are blocked unless the request includes a current auth token by following the steps listed in the django documentation here: http://www.django-rest-framework.org/api-guide/permissions/
+
+## sending token in header
+The following is an example javascript code snippet of how you would send the token in a request header to validate the request with a logged in user. This code assumes the value of the users current auth token is being stored in session storage on the browser.
+
+```
+fetch('URL_GOES_HERE', { 
+   method: 'post', 
+   headers: new Headers({
+     'Authorization': `Token ${sessionStorage.getItem('DRF_Token')}`, 
+     'Content-Type': 'application/json'
+   }), 
+   body: someObjectVariableProbablyPassedToFunction
+ });
+ ```
+
 
 ## file structure / naming conventions
 
