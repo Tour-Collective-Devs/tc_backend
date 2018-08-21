@@ -7,7 +7,7 @@ from api.models import Event
     purpose: to create the serializer class for the events model to expose it in the api
 """
 
-class Event_Serializer(serializers.HyperlinkedModelSerializer):
+class EventSerializer(serializers.HyperlinkedModelSerializer):
     """
     Serializer for the event class
     """

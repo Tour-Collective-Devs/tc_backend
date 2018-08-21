@@ -1,1 +1,1 @@
-from .employer_view import Employer_View
+from .employer_view import EmployerView

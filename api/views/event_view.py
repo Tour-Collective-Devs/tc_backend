@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from api.serializers import Event_Serializer
+from api.serializers import EventSerializer
 from api.models import Event
 
 """ 
@@ -8,10 +8,10 @@ from api.models import Event
     purpose: to create the view for events in the api
 """
 
-class Event_View(viewsets.ModelViewSet):
+class EventView(viewsets.ModelViewSet):
     """
     class to create the event view for the api
     """
     queryset = Event.objects.all()
-    serializer_class = Event_Serializer
+    serializer_class = EventSerializer
 

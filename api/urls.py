@@ -1,6 +1,5 @@
-from .views import Genre_View
 from api import views
-from employers.views import Employer_View
+from employers.views import EmployerView
 from rest_framework.routers import DefaultRouter
 from django.urls import include, path
 router = DefaultRouter()
@@ -10,9 +9,9 @@ urlpatterns = [
     path('employer/registration/', include('rest_auth.registration.urls')),
 ]
 
-router.register('employer', Employer_View, base_name='employer')
-router.register('genre', Genre_View, base_name='genre')
-router.register('role', views.Role_View, base_name='role')
-router.register('event', views.Event_View, base_name='event')
+router.register('employer', EmployerView, base_name='employer')
+router.register('genre', views.GenreView, base_name='genre')
+router.register('role', views.RoleView, base_name='role')
+router.register('event', views.EventView, base_name='event')
 
 urlpatterns += router.urls

@@ -7,7 +7,7 @@ from api.models import Role
     purpose: to hold the serializer for the crew member roles
 """
 
-class Role_Serializer(serializers.HyperlinkedModelSerializer):
+class RoleSerializer(serializers.HyperlinkedModelSerializer):
     """
     Role Serializer that will take the role and format it into python data
     """
