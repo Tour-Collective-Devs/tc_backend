@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from employers import models
-from employers import serializers
+from users import models
+from users import serializers
 
 """ 
     module: employer view
@@ -10,5 +10,5 @@ from employers import serializers
 """
 
 class UserView(viewsets.ModelViewSet):
-    queryset = models.Employer.objects.all()
-    serializer_class = serializers.EmployerSerializer
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserSerializer

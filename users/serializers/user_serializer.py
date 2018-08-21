@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from employers import models
+from users import models
 
 """ 
     module: employer serializer
@@ -9,5 +9,5 @@ from employers import models
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = models.Employer
+        model = models.User
         fields = ('email', 'username', 'id', 'url', 'name')

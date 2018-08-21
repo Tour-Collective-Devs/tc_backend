@@ -1,5 +1,5 @@
 from django.db import models
-from employers.models import Employer
+from users.models import User
 from api.models import Genre
 from api.models import Role
 
@@ -13,7 +13,7 @@ class Event(models.Model):
     """ 
         Class for creating the event data model. 
     """
-    employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     genres = models.ManyToManyField(Genre)
     role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True)
     name = models.CharField(default="", max_length=50)

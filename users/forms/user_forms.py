@@ -1,21 +1,21 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from employers.models import Employer
+from users.models import User
 
 """ 
-    moduel: employer forms
+    moduel: User forms
     author: riley mathews
-    purpose: generates forms for employer edit and creation
+    purpose: generates forms for User edit and creation
 """
 
-class Employer_Creation_Form(UserCreationForm):
+class UserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
-        model = Employer
+        model = User
         fields = ('username', 'email')
 
-class Employer_Change_Form(UserChangeForm):
+class UserChangeForm(UserChangeForm):
 
     class Meta:
-        model = Employer
+        model = User
         fields = UserChangeForm.Meta.fields
