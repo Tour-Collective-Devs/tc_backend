@@ -9,6 +9,6 @@ from employers import serializers
     purpose: to generate the view for employers in api
 """
 
-class EmployerView(viewsets.ModelViewSet):
+class UserView(viewsets.ModelViewSet):
     queryset = models.Employer.objects.all()
     serializer_class = serializers.EmployerSerializer

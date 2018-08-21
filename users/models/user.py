@@ -8,7 +8,7 @@ from django.db import models
     purpose: to create a custom model for the employer user that uses authentication
 """
 
-class Employer(AbstractUser):
+class User(AbstractUser):
     name = models.CharField(blank=True, max_length=255)
 
     def __str__(self):
