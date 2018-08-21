@@ -5,7 +5,7 @@ from django.urls import include, path
 router = DefaultRouter()
 
 urlpatterns = [
-    path('user/auth', include('rest_auth.urls')),
+    path('user-auth/', include('rest_auth.urls')),
     path('user/registration/', include('rest_auth.registration.urls')),
 ]
 
