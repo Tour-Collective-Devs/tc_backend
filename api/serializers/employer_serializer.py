@@ -13,6 +13,6 @@ class EmployerSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         fields = (
-            __all__
+            '__all__'
         )
         model = Employer
