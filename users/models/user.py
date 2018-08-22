@@ -10,8 +10,8 @@ from django.db import models
 
 class User(AbstractUser):
     name = models.CharField(blank=True, max_length=255)
-    is_employer = models.BooleanField(blank=True, default=False)
-    is_crew_member = models.BooleanField(blank=True, default=False)
+    is_employer = models.BooleanField(blank=True, default=0)
+    is_crew_member = models.BooleanField(blank=True, default=0)
 
     def __str__(self):
         return self.email

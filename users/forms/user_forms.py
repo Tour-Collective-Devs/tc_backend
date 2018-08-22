@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from users.models import User
 
-""" 
+"""
     moduel: User forms
     author: riley mathews
     purpose: generates forms for User edit and creation

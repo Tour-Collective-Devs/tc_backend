@@ -13,5 +13,6 @@ router.register('user', UserView, base_name='user')
 router.register('genre', views.GenreView, base_name='genre')
 router.register('role', views.RoleView, base_name='role')
 router.register('event', views.EventView, base_name='event')
+router.register('crew_member', views.CrewMemberView, base_name='crew_member')
 
 urlpatterns += router.urls
