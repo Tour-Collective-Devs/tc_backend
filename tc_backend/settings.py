@@ -25,7 +25,7 @@ SECRET_KEY = '-#&v*a$0qek+i(njo=-8v#$tbjunkop(r2#_&%!6fv8#f15!sl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tourcollective.co', 'careers.tourcollective.co']
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'api',
     'users',
+    'corsheaders',
     'rest_framework.authtoken',
     'rest_auth',
     'rest_framework',
@@ -59,6 +60,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -66,6 +69,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tc_backend.urls'
+
+CORS_ORIGIN_WHITELIST = (
+    'tourcollective.co',
+    'careers.tourcollective.co',
+    'localhost:3000', # for development only, this should probably be removed in production
+    '10.0.0.8:3000'
+)
 
 TEMPLATES = [
     {
@@ -134,3 +144,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
