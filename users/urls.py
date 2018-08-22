@@ -5,6 +5,6 @@ router = DefaultRouter()
 
 from . import views
 
-router.register('', views.EmployerView)
+router.register('', views.UserView)
 
 urlpatterns = router.urls

@@ -1,1 +1,0 @@
-from .employer_serializer import EmployerSerializer

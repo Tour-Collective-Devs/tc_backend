@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'api',
-    'employers',
+    'users',
     'rest_framework.authtoken',
     'rest_auth',
     'rest_framework',
@@ -53,7 +53,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
 
-AUTH_USER_MODEL = 'employers.Employer'
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
