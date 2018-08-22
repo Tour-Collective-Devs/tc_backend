@@ -25,7 +25,7 @@ SECRET_KEY = '-#&v*a$0qek+i(njo=-8v#$tbjunkop(r2#_&%!6fv8#f15!sl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tourcollective.co', 'careers.tourcollective.co']
+ALLOWED_HOSTS = ['tourcollective.co', 'careers.tourcollective.co', '127.0.0.1']
 
 
 # Application definition
@@ -55,6 +55,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'users.User'
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'users.serializers.RegistrationSerializer'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
