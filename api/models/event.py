@@ -18,7 +18,7 @@ class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     genres = models.ManyToManyField(Genre)
     role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(default="", max_length=50)
+    name = models.CharField(max_length=50)
     start_date = models.DateField()
     end_date = models.DateField()
     description = models.CharField(max_length=200)

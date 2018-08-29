@@ -15,6 +15,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
             'id',
             'url',
+            'name',
             'user',
             'genres',
             'role',
