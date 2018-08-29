@@ -2,7 +2,7 @@ from rest_framework import serializers
 from api.models import Employer
 from users.serializers import UserSerializer
 
-"""  
+"""
     module: event serializer
     author: riley mathews
     purpose: to create the serializer class for the employers model to expose it in the api
