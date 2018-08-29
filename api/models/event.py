@@ -30,7 +30,7 @@ class Event(models.Model):
         ("upfront", "Up Front")
     )
     pay_type = models.CharField(max_length=20, choices=pay_types)
-    crew_member = models.ManyToManyField(CrewMember, blank=True)
+    crew_member = models.ManyToManyField(CrewMember, through='Application', related_name='Application')
 
     def __str__(self):
         """str method for genre class
