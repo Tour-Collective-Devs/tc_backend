@@ -5,3 +5,4 @@ __pycache__
 # database management
 *.sqlite3
 migrations
+.vscode
