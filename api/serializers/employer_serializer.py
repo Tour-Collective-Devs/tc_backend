@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from api.models import Employer
+from users.serializers import UserSerializer
 
 """  
     module: event serializer
@@ -11,8 +12,15 @@ class EmployerSerializer(serializers.HyperlinkedModelSerializer):
     """
     Serializer for the employer class
     """
+
+    user = UserSerializer(many=False, read_only=True)
+
     class Meta:
         fields = (
-            '__all__'
+            'id',
+            'url',
+            'organization_name',
+            'user',
         )
         model = Employer
+
