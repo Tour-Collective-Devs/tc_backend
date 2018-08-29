@@ -11,6 +11,7 @@ class Application(models.Model):
     """
     crew_member = models.ForeignKey(CrewMember, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    accepted = models.BooleanField()
 
     def __str__(self):
 

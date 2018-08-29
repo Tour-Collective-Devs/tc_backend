@@ -13,3 +13,4 @@ class CrewMemberSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         fields = '__all__'
         model = CrewMember
+        depth = 1
