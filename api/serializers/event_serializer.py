@@ -16,7 +16,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
             'id',
             'url',
             'name',
-            'user',
+            'employer',
             'genres',
             'role',
             'start_date',
