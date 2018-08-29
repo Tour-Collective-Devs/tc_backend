@@ -10,4 +10,4 @@ from users.models import User
 class Employer(models.Model):
     """ model to hold employer profile information """
     organization_name = models.CharField(max_length=100)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)

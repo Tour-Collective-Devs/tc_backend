@@ -17,6 +17,10 @@ class EmployerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         fields = (
-            '__all__'
+            'id',
+            'url',
+            'organization_name',
+            'user',
         )
         model = Employer
+
