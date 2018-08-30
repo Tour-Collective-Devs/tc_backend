@@ -78,7 +78,8 @@ CORS_ORIGIN_WHITELIST = (
     'tourcollective.co',
     'careers.tourcollective.co',
     'localhost:3000', # for development only, this should probably be removed in production
-    '10.0.0.8:3000'
+    '10.0.0.8:3000',
+    '*.amazonaws.com',
 )
 
 TEMPLATES = [
