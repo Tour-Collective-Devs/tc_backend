@@ -61,10 +61,10 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -74,13 +74,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tc_backend.urls'
 
-CORS_ORIGIN_WHITELIST = (
-    'tourcollective.co',
-    'careers.tourcollective.co',
-    'localhost:3000', # for development only, this should probably be removed in production
-    '10.0.0.8:3000',
-    'http://tc-front-end-proto.s3-website.us-east-2.amazonaws.com/register',
-)
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
