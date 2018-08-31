@@ -84,6 +84,24 @@ class name `Crew_User_Account` for the class name in the file
 
 make sure to add classes within directories to the directories init file
 
+## Deploying this project
+Follow these steps to deploy a new version of this api to our digital ocean server.
 
-for further reading...
-https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html
+1. SSH into the server `ssh tc....`
+1. From the home directory of that user you can paste in the following commands in whole to update the server
+```
+source env/bin/activate
+cd tc_backend
+git pull origin master
+python manage.py collectstatic
+python manage.py makemigrations
+python manage.py makemigrations allauth
+python manage.py makemigrations users
+python manage.py makemigrations api
+python manage.py migrate
+sudo systemctl restart gunicorn
+sudo systemctl restart nginx
+exit
+```
+
+Depending on the complexity of the update certain lines may or may not be needed. If the new update does not contain any changes to models you can safely remove all the lines dealing with database migration.
