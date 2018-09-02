@@ -3,7 +3,6 @@ from api.serializers import EventSerializer
 from api.models import Event
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.authentication import TokenAuthentication
 
 """
     module: event view
@@ -17,7 +16,6 @@ class EventView(viewsets.ModelViewSet):
     """
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    authentication_classes = (TokenAuthentication,)
 
     def create(self, request):
         serializer = EventSerializer(data=request.data, context={'request': request})
