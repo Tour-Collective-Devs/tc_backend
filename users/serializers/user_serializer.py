@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from users import models
 
-""" 
+"""
     module: employer serializer
     author: riley mathews
     purpose: to create the serializer for the employer model

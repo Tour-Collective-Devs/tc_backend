@@ -22,3 +22,14 @@ class CrewMemberView(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    """
+    author: jacob smith
+    purpose: Determine the current user by their token, and return their data
+    """
+    def get_queryset(self):
+
+        queryset = CrewMember.objects.filter(id=self.request.user.crew_member.id)
+        return queryset
+
+
