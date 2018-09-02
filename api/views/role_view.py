@@ -1,6 +1,7 @@
 from rest_framework import viewsets
 from api.serializers import RoleSerializer
 from api.models import Role
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 """ 
     module: role view
@@ -15,4 +16,4 @@ class RoleView(viewsets.ModelViewSet):
     """
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
-
+    permission_classes = (IsAuthenticatedOrReadOnly,)
