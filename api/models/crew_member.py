@@ -9,7 +9,7 @@ from users.models import User
 """
 class CrewMember(models.Model):
     roles = models.ManyToManyField(Role, through='CrewMemberRole', blank=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='crew_member')
     verified = models.BooleanField(default=False, blank=True)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)

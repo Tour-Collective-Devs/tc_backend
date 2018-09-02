@@ -27,6 +27,9 @@ class CrewMemberView(viewsets.ModelViewSet):
     author: jacob smith
     purpose: Determine the current user by their token, and return their data
     """
+    def get_queryset(self):
 
+        queryset = CrewMember.objects.filter(id=self.request.user.crew_member.id)
+        return queryset
 
 
