@@ -11,4 +11,4 @@ from .role import Role
 class CrewMemberRole(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
     crew_member = models.ForeignKey(CrewMember, on_delete=models.CASCADE)
-    years_experience = models.CharField(blank=True, null=True)
+    years_experience = models.IntegerField(blank=True, null=True)
