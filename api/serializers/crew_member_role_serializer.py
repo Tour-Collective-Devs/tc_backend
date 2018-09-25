@@ -13,7 +13,11 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         fields = (
-            '__all__'
+            'id',
+            'url',
+            'years_experience',
+            'role',
+            'crew_member',
         )
         model = CrewMemberRole
-        depth=1
+        depth = 1

@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from api.serializers import CrewMemberRoleSerializer
-from api.models import CrewMemberRole
+from api.models import CrewMemberRole, CrewMember
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 """
@@ -16,3 +16,14 @@ class CrewMemberRoleView(viewsets.ModelViewSet):
     queryset = CrewMemberRole.objects.all()
     serializer_class = CrewMemberRoleSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get_queryset(self):
+        if self.request.query_params.get('crew_member'):
+            crew_member = CrewMember.objects.get(id=self.request.query_params.get('crew_member', None))
+            queryset = CrewMemberRole.objects.filter(crew_member=crew_member)
+        else:
+            queryset = CrewMemberRole.objects.all()
+
+        return queryset
+        
+

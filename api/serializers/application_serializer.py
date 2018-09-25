@@ -13,6 +13,10 @@ class ApplicationSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         fields = (
-            '__all__'
+            'id',
+            'url',
+            'accepted',
+            'crew_member',
+            'event'
         )
         model = Application
