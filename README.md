@@ -46,6 +46,9 @@ show_count: integer
 required_experience: char field
 pay_type: select field
 
+available query parameters
+`api/event/?employer=true` will return a list of events of the currently logged in employer
+
 
 ## Auth
 Our employer and (crew not finished) models uses django-rest-authentication endpoints
