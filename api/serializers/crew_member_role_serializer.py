@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from api.models import CrewMemberRole
+from .crew_member_role_read_serializer import CrewMemberRoleReadSerializer
 
 """
     module: crew member role serializer
@@ -21,3 +22,7 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
         )
         model = CrewMemberRole
         # depth = 1
+
+    def to_representation(self, instance):
+        serializer = CrewMemberRoleReadSerializer(instance, context=self.context)
+        return serializer.data
