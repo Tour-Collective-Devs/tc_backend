@@ -11,6 +11,8 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
     """
     Serializer for the crew member role serializer class
     """
+    crew_member = serializers.URLField(read_only=True)
+
     class Meta:
         fields = (
             '__all__'
