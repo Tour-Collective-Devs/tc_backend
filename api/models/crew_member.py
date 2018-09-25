@@ -1,6 +1,6 @@
 from django.db import models
 from api.models import Role
-from users.models import User
+from .user import User
 
 """
     module: crew_member model
