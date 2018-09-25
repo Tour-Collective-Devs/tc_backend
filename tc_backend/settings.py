@@ -31,34 +31,24 @@ ALLOWED_HOSTS = ['tourcollective.co', 'careers.tourcollective.co', '127.0.0.1', 
 # Application definition
 
 INSTALLED_APPS = [
-    'api',
-    'users',
-    'corsheaders',
-    'rest_framework.authtoken',
-    'rest_auth',
-    'rest_framework',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'rest_auth.registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'api',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-SITE_ID = 1
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'api.User'
 
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'users.serializers.RegistrationSerializer'
-}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from api.models import Employer
-from users.serializers import UserSerializer
+from .user_serializer import UserSerializer
 
 """
     module: event serializer

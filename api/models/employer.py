@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import User
+from .user import User
 
 """
     module: employer model
