@@ -7,7 +7,7 @@ from api.models import CrewMemberRole
     purpose: to create the serializer class for the intersection table of crew memebrs to roles
 """
 
-class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
+class CrewMemberRoleReadSerializer(serializers.HyperlinkedModelSerializer):
     """
     Serializer for the crew member role serializer class
     """
@@ -20,4 +20,4 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
             'crew_member',
         )
         model = CrewMemberRole
-        # depth = 1
+        depth = 1

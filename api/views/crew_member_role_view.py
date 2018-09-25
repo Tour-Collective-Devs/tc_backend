@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from api.serializers import CrewMemberRoleSerializer
+from api.serializers import CrewMemberRoleSerializer, CrewMemberRoleReadSerializer
 from api.models import CrewMemberRole, CrewMember
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -27,3 +27,10 @@ class CrewMemberRoleView(viewsets.ModelViewSet):
         return queryset
         
 
+    def get_serializer_class(self):
+        
+        if self.request.method in ['GET']:
+            
+            return CrewMemberRoleReadSerializer
+            
+        return CrewMemberRoleSerializer
