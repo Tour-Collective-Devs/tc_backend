@@ -4,6 +4,7 @@ from django.urls import include, path
 router = DefaultRouter()
 
 urlpatterns = [
+    path('auth/register/', views.register_user)
 ]
 
 router.register('user', views.UserView, base_name='user')
