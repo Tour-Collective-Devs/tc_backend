@@ -16,3 +16,4 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
             '__all__'
         )
         model = CrewMemberRole
+        depth=1
