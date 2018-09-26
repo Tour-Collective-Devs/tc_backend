@@ -22,6 +22,7 @@ class Event(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     description = models.CharField(max_length=200)
+    notes = models.CharField(max_length=2000)
     total_pay = models.IntegerField()
     show_count = models.IntegerField()
     required_experience = models.CharField(max_length=500)
