@@ -19,7 +19,6 @@ class CrewMemberSerializer(serializers.HyperlinkedModelSerializer):
             'city',
             'state',
             'will_travel',
-            'roles'
         )
         model = CrewMember
         depth = 1
