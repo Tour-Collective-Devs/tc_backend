@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from api.serializers import EventSerializer
+from api.serializers import EventSerializer, EventReadSerializer
 from api.models import Event
 from rest_framework import status
 from rest_framework.response import Response
@@ -30,3 +30,10 @@ class EventView(viewsets.ModelViewSet):
             queryset = Event.objects.all()
 
         return queryset
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            
+            return EventReadSerializer
+            
+        return EventSerializer
