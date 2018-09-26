@@ -11,6 +11,15 @@ class CrewMemberSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer(many=False, read_only=True)
 
     class Meta:
-        fields = '__all__'
+        fields = (
+            'id',
+            'url',
+            'user',
+            'verified',
+            'city',
+            'state',
+            'will_travel',
+            'roles'
+        )
         model = CrewMember
         depth = 1

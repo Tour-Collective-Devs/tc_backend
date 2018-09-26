@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from api.models import CrewMemberRole
-from .crew_member_role_read_serializer import CrewMemberRoleReadSerializer
 
 """
     module: crew member role serializer
@@ -8,7 +7,7 @@ from .crew_member_role_read_serializer import CrewMemberRoleReadSerializer
     purpose: to create the serializer class for the intersection table of crew memebrs to roles
 """
 
-class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
+class CrewMemberRoleReadSerializer(serializers.HyperlinkedModelSerializer):
     """
     Serializer for the crew member role serializer class
     """
@@ -21,8 +20,4 @@ class CrewMemberRoleSerializer(serializers.HyperlinkedModelSerializer):
             'crew_member',
         )
         model = CrewMemberRole
-        # depth = 1
-
-    def to_representation(self, instance):
-        serializer = CrewMemberRoleReadSerializer(instance, context=self.context)
-        return serializer.data
+        depth = 1
