@@ -22,3 +22,11 @@ class EventView(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(employer=request.user.employer)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get_queryset(self):
+        if self.request.query_params.get('employer', False) and self.request.user.is_employer:
+            queryset = Event.objects.filter(employer=self.request.user.employer)
+        else:
+            queryset = Event.objects.all()
+
+        return queryset
