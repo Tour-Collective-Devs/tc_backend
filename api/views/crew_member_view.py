@@ -29,7 +29,12 @@ class CrewMemberView(viewsets.ModelViewSet):
     """
     def get_queryset(self):
 
-        queryset = CrewMember.objects.filter(id=self.request.user.crew_member.id)
+        crew_id = self.request.query_params.get("id", None)
+
+        if crew_id:
+            queryset = CrewMember.objects.filter(pk=crew_id)
+        else:
+            queryset = CrewMember.objects.filter(id=self.request.user.crew_member.id)
         return queryset
 
 
